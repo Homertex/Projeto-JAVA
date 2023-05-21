@@ -1,13 +1,13 @@
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-class PosPago extends Assinante {
+public class PosPago extends Assinante {
     private double assinatura;
 
     public PosPago(long cpf, String nome, String numero, double assinatura) {
         super(cpf, nome, numero);
         this.assinatura = assinatura;
-    }
+    }   
 
     public void fazerChamada(GregorianCalendar data, int duracao) {
         Chamada chamada = new Chamada(data, duracao);
