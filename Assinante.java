@@ -20,4 +20,9 @@ public class Assinante {
     public String toString() {
         return "CPF: " + cpf + ", Nome: " + nome + ", Número: " + numero;
     }
+
+    public void realizarChamada(Chamada chamada) {
+        chamadas[numChamadas] = chamada;
+        numChamadas++;
+    }
 }
