@@ -12,7 +12,7 @@ public class PrePago{
         this.recargas = new Recarga[100];
     }
 
-     public void fazerChamada(GregorianCalendar data, int duracao) {
+    public void fazerChamada(GregorianCalendar data, int duracao) {
         Chamada chamada = new Chamada(data, duracao);
         double custoChamada = 1.45 * duracao;
 
@@ -23,6 +23,20 @@ public class PrePago{
         } else {
             System.out.println("SALDO INSUFICIENTE");
         }
+
+    public void recarregar(GregorianCalendar data, float valor) {
+        Recarga recarga = new Recarga(data, valor);
+
+        if (numRecargas < 100) {
+            recargas[numRecargas] = recarga;
+            numRecargas++; 
+            creditos += valor;
+            System.out.println("RECARREGADO");
+        } else {
+            System.out.println("LIMITE ALCANÇADO, RECARGA NÃO FINALIZADA");
+        }
+    }
+    
     }
 
 
