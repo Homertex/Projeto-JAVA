@@ -37,5 +37,15 @@ public class PrePago extends Assinante {
     }
     
     }
+    
+    public void imprimirFatura(int mes) {
+        double totalCustoChamadas = 0.0;
+        float totalValorRecargas = 0.0f;
+
+        System.out.println("Fatura do mês: " + mes);
+        System.out.println("CPF: " + getCpf());
+        System.out.println("Nome: " + getNome());
+        System.out.println("Número: " + getNumero());
+        System.out.println("Chamadas realizadas no mês:");
 
 }
