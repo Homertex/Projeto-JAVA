@@ -22,6 +22,7 @@ public class PrePago extends Assinante {
         } else {
             System.out.println("SALDO INSUFICIENTE");
         }
+    }
 
     public void recarregar(GregorianCalendar data, float valor) {
         Recarga recarga = new Recarga(data, valor);
@@ -63,5 +64,17 @@ public class PrePago extends Assinante {
                 System.out.println("Valor: R$" + custoChamada);
             }
         }
+        System.out.println("Recargas realizadas no mês:");
+        for (int i = 0; i < numRecargas; i++) {
+            Recarga recarga = recargas[i];
+            int recargaMes = recarga.getData().get(GregorianCalendar.MONTH);
+            if (recargaMes == mes) {
+                totalValorRecargas += recarga.getValor();
 
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String formattedDate = dateFormat.format(recarga.getData().getTime());
+
+                System.out.println("Data: " + formattedDate);
+                System.out.println("Valor: R$" + recarga.getValor());
+            }
 }
