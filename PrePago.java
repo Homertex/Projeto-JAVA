@@ -37,7 +37,7 @@ public class PrePago extends Assinante {
     }
     
     }
-    
+
     public void imprimirFatura(int mes) {
         double totalCustoChamadas = 0.0;
         float totalValorRecargas = 0.0f;
@@ -47,5 +47,21 @@ public class PrePago extends Assinante {
         System.out.println("Nome: " + getNome());
         System.out.println("Número: " + getNumero());
         System.out.println("Chamadas realizadas no mês:");
+
+        for (int i = 0; i < getNumChamadas(); i++) {
+            Chamada chamada = getChamada(i);
+            int chamadaMes = chamada.getData().get(GregorianCalendar.MONTH);
+            if (chamadaMes == mes) {
+                double custoChamada = 1.45 * chamada.getDuracao();
+                totalCustoChamadas += custoChamada;
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String formattedDate = dateFormat.format(chamada.getData().getTime());
+
+                System.out.println("Data: " + formattedDate);
+                System.out.println("Duração: " + chamada.getDuracao() + " minutos");
+                System.out.println("Valor: R$" + custoChamada);
+            }
+        }
 
 }
