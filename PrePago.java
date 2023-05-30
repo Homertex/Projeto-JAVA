@@ -51,7 +51,8 @@ public class PrePago extends Assinante {
         float totalValorRecargas = 0.0f;
 
         System.out.println("Fatura do mês: " + mes);
-        System.out.println("CPF: " + toString());
+        System.out.println("CPF: " + getCpf());
+        System.out.println(toString());
         System.out.println("Chamadas realizadas no mês:");
 
         for (int i = 0; i < numChamadas; i++) {

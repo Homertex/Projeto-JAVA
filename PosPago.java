@@ -10,9 +10,11 @@ public class PosPago extends Assinante {
     }   
 
     public void fazerChamada(GregorianCalendar data, int duracao) {
-        Chamada chamada = new Chamada(data, duracao);
-        if (getNumChamadas() < 100) {
-            realizarChamada(chamada);
+        
+        if (numChamadas < 100) {
+        	Chamada chamada = new Chamada(data, duracao);
+        	chamadas[numChamadas] = chamada;
+            numChamadas++;
             System.out.println("Chamada registrada com sucesso");
         } else {
             System.out.println("Não é possível registrar a chamada. Limite de chamadas atingido");
@@ -20,16 +22,15 @@ public class PosPago extends Assinante {
     }
 
     public void imprimirFatura(int mes) {
-        double totalCustoChamadas = 0.0;
+        double totalCustoChamadas = 0.0f;
 
         System.out.println("Fatura do mês: " + mes);
         System.out.println("CPF: " + getCpf());
-        System.out.println("Nome: " + getNome());
-        System.out.println("Número: " + getNumero());
+        System.out.println(toString());
         System.out.println("Chamadas realizadas no mês:");
 
-        for (int i = 0; i < getNumChamadas(); i++) {
-            Chamada chamada = getChamada(i);
+        for (int i = 0; i < numChamadas; i++) {
+            Chamada chamada = chamadas[i];
             int chamadaMes = chamada.getData().get(GregorianCalendar.MONTH);
             if (chamadaMes == mes) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
