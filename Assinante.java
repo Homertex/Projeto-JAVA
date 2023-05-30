@@ -2,8 +2,8 @@ public class Assinante {
     private long cpf;
     private String nome;
     private String numero;
-    private Chamada[] chamadas;
-    private int numChamadas;
+    protected Chamada[] chamadas;
+    protected int numChamadas;
     
     public Assinante(long cpf, String nome, String numero) {
         this.cpf = cpf;
