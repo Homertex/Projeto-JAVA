@@ -8,7 +8,7 @@ public class PrePago extends Assinante {
 
     public PrePago(long cpf, String nome, String numero){
         super(cpf, nome, numero);
-        this.recargas = new Recarga[100];
+        this.recargas = new Recarga[2];
         this.numRecargas = 0;
         this.creditos = 0;
     }
@@ -17,7 +17,7 @@ public class PrePago extends Assinante {
         
         double custoChamada = 1.45 * duracao;
         
-        if(numChamadas >= 100) {
+        if(numChamadas >= chamadas.length) {
         	System.out.println("ESPAÇO DE ARMAZENAMENTO DE CHAMADAS INSUFICIENTE");
         	return;
         }

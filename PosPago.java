@@ -11,7 +11,7 @@ public class PosPago extends Assinante {
 
     public void fazerChamada(GregorianCalendar data, int duracao) {
         
-        if (numChamadas < 100) {
+        if (numChamadas < chamadas.length) {
         	Chamada chamada = new Chamada(data, duracao);
         	chamadas[numChamadas] = chamada;
             numChamadas++;

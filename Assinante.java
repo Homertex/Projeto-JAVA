@@ -9,7 +9,7 @@ public class Assinante {
         this.cpf = cpf;
         this.nome = nome;
         this.numero = numero;
-        this.chamadas = new Chamada[100]; // Tamanho inicial do vetor de chamadas (pode ser ajustado conforme necessário)
+        this.chamadas = new Chamada[2]; // Tamanho inicial do vetor de chamadas (pode ser ajustado conforme necessário)
         this.numChamadas = 0;
     }
     
