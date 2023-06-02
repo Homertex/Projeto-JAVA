@@ -32,7 +32,7 @@ public class PosPago extends Assinante {
         for (int i = 0; i < numChamadas; i++) {
             Chamada chamada = chamadas[i];
             int chamadaMes = chamada.getData().get(GregorianCalendar.MONTH);
-            if (chamadaMes == mes) {
+            if (chamadaMes == mes - 1) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 String formattedDate = dateFormat.format(chamada.getData().getTime());
 

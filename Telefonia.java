@@ -115,7 +115,6 @@ public class Telefonia{
         	GregorianCalendar data = new GregorianCalendar();
         	try {
         		data.setTime(dateFormat.parse(dataString));
-        		
         	}catch(ParseException e) {
         		System.out.println("Formato de data inválido.");
         		return;
@@ -191,7 +190,6 @@ public class Telefonia{
     	
     	for(int i = 0; i < numPrePagos; i++) {
     		PrePago assinantePrePago = prePagos[i];
-    		System.out.println(assinantePrePago.toString());
     		assinantePrePago.imprimirFatura(mes);	
     	}
     	
@@ -199,7 +197,6 @@ public class Telefonia{
     	
     	for(int i = 0; i < numPosPagos; i++) {
     		PosPago assinantePosPago = posPagos[i];
-    		System.out.println(assinantePosPago.toString());
     		assinantePosPago.imprimirFatura(mes);	
     	}
     }

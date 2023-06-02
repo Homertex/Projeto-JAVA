@@ -58,7 +58,7 @@ public class PrePago extends Assinante {
         for (int i = 0; i < numChamadas; i++) {
             Chamada chamada = chamadas[i];
             int chamadaMes = chamada.getData().get(GregorianCalendar.MONTH);
-            if (chamadaMes == mes) {
+            if (chamadaMes == mes - 1) {
                 double custoChamada = 1.45 * chamada.getDuracao();
                 totalCustoChamadas += custoChamada;
 
@@ -74,7 +74,7 @@ public class PrePago extends Assinante {
         for (int i = 0; i < numRecargas; i++) {
             Recarga recarga = recargas[i];
             int recargaMes = recarga.getData().get(GregorianCalendar.MONTH);
-            if (recargaMes == mes) {
+            if (recargaMes == mes - 1) {
                 totalValorRecargas += recarga.getValor();
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
